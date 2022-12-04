@@ -1,0 +1,100 @@
+# -- Application ---------------------------------------------------------------------------
+/site/public/hot
+/site/public/storage
+/site/storage/*.key
+/site/vendor
+/site/.env
+/site/.phpunit.result.cache
+/site/.php_cs.cache
+/site/.php-cs-fixer.cache
+.php-cs-fixer.cache
+
+# -- Editors ---------------------------------------------------------------------------
+# vim
+.*.sw[a-z]
+*.un~
+Session.vim
+.netrwhist
+
+# eclipse
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+.externalToolBuilders/
+*.launch
+.buildpath
+
+# phpstorm webstorm
+.idea/
+
+# textmate
+*.tmproj
+*.tmproject
+tmtags
+
+# sublimetext
+/*.sublime-project
+*.sublime-workspace
+
+# netbeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+# vcode
+vscode
+.vscode
+
+# -- Operating systems ----------------------------------------------------------------
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+!.gitignore
+#!.htaccess
+*~
+.~*
+
+# Mac OS X
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# -- Packages ---------------------------------------------------------------------------
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# -- Logs and databases -----------------------------------------------------------------
+*.log
+*.sql
+*.sqlite
