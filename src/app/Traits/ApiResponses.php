@@ -5,7 +5,7 @@ namespace App\Traits;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Log;
 
-trait ApiResponser
+trait ApiResponses
 {
     /**
      * @param $data

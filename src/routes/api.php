@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,7 +14,16 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware(['accept.json.only'])->group(function () {
+    Route::post('register', [AuthController::class, 'register'])->name('user.register');
+    Route::post('login', [AuthController::class, 'login'])->name('user.login');
 });
+
+Route::middleware(['auth:sanctum', 'accept.json.only'])->group(function () {
+    Route::post('logout', [AuthController::class, 'logout'])->name('user.logout');
+
+    Route::get('users', [UserController::class, 'index'])->name('user.index');
+    Route::get('me', [UserController::class, 'me'])->name('user.me');
+});
+
+
