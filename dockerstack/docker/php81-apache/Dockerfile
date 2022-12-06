@@ -1,4 +1,5 @@
 FROM php:8.1.13-apache-buster
+#FROM php:8.0.26-apache-buster
 
 LABEL maintainer="Adrian Coral <adriancoral@gmail.com>"
 

@@ -5,7 +5,7 @@ namespace App\ModelStates\Tournament;
 use App\Models\Tournament;
 use Spatie\ModelStates\Transition;
 
-class ProcessingToDoneTransition extends Transition
+class PlayingToDoneTransition extends Transition
 {
     private Tournament $tournament;
 
@@ -19,7 +19,7 @@ class ProcessingToDoneTransition extends Transition
         $this->tournament->status = new Done($this->tournament);
         $this->tournament->save();
 
-        /// Dispatch evento de recalculo de handicap para todos los players del torneo
+        /// Dispatch evento de recálculo de handicap para todos los players del torneo
 
         return $this->tournament;
     }

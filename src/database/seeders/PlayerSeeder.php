@@ -15,8 +15,8 @@ class PlayerSeeder extends Seeder
      */
     public function run()
     {
-        Player::factory()->count(32)->male()->create();
+        Player::factory()->count(32)->male(null)->create();
 
-        Player::factory()->count(32)->female()->create();
+        Player::factory()->count(32)->female(null)->create();
     }
 }

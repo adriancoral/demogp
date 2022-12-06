@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->unsignedSmallInteger('handicap');
             $table->enum('association', ['atp', 'wta']);
-            $table->json('features');
+            $table->json('features')->nullable();
             $table->timestamps();
         });
     }

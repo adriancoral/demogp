@@ -16,8 +16,9 @@ abstract class TournamentState extends State
     {
         return parent::config()
             ->default(Pending::class)
-            ->allowTransition(Pending::class, Processing::class)
-            ->allowTransition(Processing::class, Done::class, ProcessingToDoneTransition::class);
+            ->allowTransition(Pending::class, Enrollment::class)
+            ->allowTransition(Enrollment::class, Playing::class, EnrollmentToPlayingTransition::class)
+            ->allowTransition(Playing::class, Done::class, PlayingToDoneTransition::class);
 
     }
 }

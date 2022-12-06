@@ -4,7 +4,7 @@ namespace App\ModelStates\Tournament;
 
 class Done extends TournamentState
 {
-    public static $name = 'done';
+    public static string $name = 'done';
 
     public function value(): string
     {

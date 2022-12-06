@@ -2,9 +2,9 @@
 
 namespace App\ModelStates\Tournament;
 
-class Processing extends TournamentState
+class Enrollment extends TournamentState
 {
-    public static $name = 'processing';
+    public static string $name = 'enrollment';
 
     public function value(): string
     {

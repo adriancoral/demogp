@@ -12,9 +12,18 @@ class Tournament extends Model
     use HasFactory;
     use HasStates;
 
-    protected array $guarded = [];
+    protected $guarded = [];
 
-    protected array $casts = [
+    protected $casts = [
         'status' => TournamentState::class,
+    ];
+
+    /**
+     * The event map for the model.
+     *
+     * @var array
+     */
+    protected $dispatchesEvents = [
+        'created' => TournamentCreated::class,
     ];
 }
