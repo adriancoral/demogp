@@ -2,6 +2,7 @@
 
 namespace App\ModelStates\Tournament;
 
+use App\Jobs\GameSimulation;
 use App\Models\Tournament;
 use Spatie\ModelStates\Transition;
 
@@ -19,7 +20,7 @@ class EnrollmentToPlayingTransition extends Transition
         $this->tournament->status = new Playing($this->tournament);
         $this->tournament->save();
 
-        /// Dispatch evento de calculo de juegos
+        GameSimulation::dispatch($this->tournament, 1);
 
         return $this->tournament;
     }

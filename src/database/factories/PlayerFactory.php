@@ -22,7 +22,23 @@ class PlayerFactory extends Factory
             'name' => $this->faker->name($gender),
             'handicap' => $this->faker->numberBetween(0, 100),
             'association' => $association,
+            'features' => $this->playerFeatures($gender)
         ];
+    }
+
+    private function playerFeatures($gender): array
+    {
+        if ($gender == 'male') {
+            return [
+                'strength' => $this->faker->numberBetween(0, 100),
+                'speed' => $this->faker->numberBetween(0, 100),
+            ];
+        }
+
+        return [
+            'reaction' => $this->faker->numberBetween(0, 100),
+        ];
+
     }
 
     /**
@@ -34,7 +50,8 @@ class PlayerFactory extends Factory
         return $this->state(function (array $attributes) use ($name) {
             return [
                 'name' => $name ?? $this->faker->name('male'),
-                'association' => 'atp'
+                'association' => 'atp',
+                'features' => $this->playerFeatures('male'),
             ];
         });
     }
@@ -48,7 +65,8 @@ class PlayerFactory extends Factory
         return $this->state(function (array $attributes) use ($name) {
             return [
                 'name' => $name ?? $this->faker->name('female'),
-                'association' => 'wta'
+                'association' => 'wta',
+                'features' => $this->playerFeatures('female'),
             ];
         });
     }

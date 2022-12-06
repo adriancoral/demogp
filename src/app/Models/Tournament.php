@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\TournamentCreated;
 use App\ModelStates\Tournament\TournamentState;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

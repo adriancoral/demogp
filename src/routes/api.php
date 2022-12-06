@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\TournamentController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,9 @@ Route::middleware(['auth:sanctum', 'accept.json.only'])->group(function () {
 
     Route::post('tournament', [TournamentController::class, 'create'])->name('tournament.create');
     Route::get('tournament/list', [TournamentController::class, 'index'])->name('tournament.index');
+    Route::get('tournament/{tournament}/results', [TournamentController::class, 'results'])->name('tournament.results');
+
+    Route::get('player/{player}', [PlayerController::class, 'show'])->name('player.show');
 });
 
 
