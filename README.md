@@ -37,6 +37,9 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 ./composer.json
 ```
 
+NOTA: Opte por Laravel por la experiencia personal, Poco tiempo para encontrar algunas features de Symfony similares a 
+Laravel, como el manejo de eventos y Jobs
+
 ### Instalación
 
 Setear usuario en el grupo de docker (en caso de no tenerlo):
